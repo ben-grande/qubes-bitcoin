@@ -1,0 +1,42 @@
+## Copyright (C) 2016 - 2022 ENCRYPTED SUPPORT LP <adrelanos@whonix.org>
+## See the file COPYING for copying conditions
+
+#### meta start
+#### project Whonix
+#### category tor-control
+#### description
+## Shipped but not enabled by default onion-grater profile.
+#### meta end
+
+## Important files
+## https://github.com/bitcoin/bitcoin/blob/master/doc/tor.md
+## https://github.com/bitcoin/bitcoin/blob/master/src/torcontrol.cpp
+
+## Bitcoin default P2P ports
+## Listening ports: main(8333) testnet(18333) signet(38333) regtest(18444)
+## Binding ports: {listening_port} + 1
+
+## Bitcoind default is to use "bind=127.0.0.1:8334=onion". That won't work with
+## Whonix because it will not be listening on the internal network interface.
+## To listen on onion, set your bitcoin.conf to bind to "bind=0.0.0.0:8334=onion".
+
+---
+- exe-paths:
+    - '*'
+  users:
+    - '*'
+  hosts:
+    - '*'
+  commands:
+    ADD_ONION:
+      ## {{{
+      - pattern:     'NEW:(\S+) Port=8333,(?:127.0.0.1|0.0.0.0):8334'
+        replacement: 'NEW:{} Port=8333,{client-address}:8334 Flags=DiscardPK'
+      - pattern:     'NEW:(\S+) Port=18333,(?:127.0.0.1|0.0.0.0):18334'
+        replacement: 'NEW:{} Port=18333,{client-address}:18334 Flags=DiscardPK'
+      - pattern:     'NEW:(\S+) Port=38333,(?:127.0.0.1|0.0.0.0):38334'
+        replacement: 'NEW:{} Port=38333,{client-address}:38334 Flags=DiscardPK'
+      - pattern:     'NEW:(\S+) Port=18444,(?:127.0.0.1|0.0.0.0):18445'
+        replacement: 'NEW:{} Port=18444,{client-address}:18445 Flags=DiscardPK'
+      ## }}}
+

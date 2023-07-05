@@ -1,0 +1,9 @@
+[Unit]
+Description=Bitcoind RPC QREXEC Socket
+
+[Socket]
+ListenStream=127.0.0.1:8332
+Accept=true
+
+[Install]
+WantedBy=sockets.target

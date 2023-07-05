@@ -1,0 +1,7 @@
+[Unit]
+Description=Bitcoind RPC QREXEC Service
+
+[Service]
+ExecStart=qrexec-client-vm '' qubes.ConnectTCP+8332
+StandardInput=socket
+StandardOutput=inherit
