@@ -2,6 +2,8 @@
 
 **qwbtc** stands for Qubes-Whonix-Bitcoin.
 
+This work is unfinished, do not use it unless you are a developer.
+
 ## Table of Contents
 <!-- vim-markdown-toc GFM -->
 
