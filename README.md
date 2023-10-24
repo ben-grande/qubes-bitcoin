@@ -4,6 +4,9 @@
 
 This work is unfinished, do not use it unless you are a developer.
 
+It was made at a time before I new Salt. It has a lot of documentation and
+commands to be run, but it may take some time to setup. Last tested in 2022.
+
 ## Table of Contents
 <!-- vim-markdown-toc GFM -->
 
@@ -44,7 +47,7 @@ Simple overview:
 4. External Connections are made via Whonix-Workstation > Whonix-Gateway
 
 Compatibility:
-- Qubes R4.2
+- Qubes R4.1
 - Qrexec policy format R5.0 according to [multifile-policy.markdown](https://github.com/QubesOS/qubes-core-qrexec/blob/master/doc/multifile-policy.markdown)
 - Whonix 16
 - Bitcoin v0.23.0
