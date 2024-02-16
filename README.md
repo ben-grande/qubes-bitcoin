@@ -1,3 +1,5 @@
+# WARNING: guide is outdated, check out automation of this project via salt formulas in [qusal](https://github.com/ben-grande/qusal)
+
 # qwbtc
 
 **qwbtc** stands for Qubes-Whonix-Bitcoin.
